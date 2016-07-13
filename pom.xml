@@ -10,8 +10,9 @@
   <packaging>jar</packaging>
 
   <properties>
-    <gosu.version>1.13.6</gosu.version>
+    <gosu.version>1-issue76-SNAPSHOT</gosu.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <dist.man.snapshotrepo.url>https://oss.sonatype.org/content/repositories/snapshots</dist.man.snapshotrepo.url>
   </properties>
 
   <dependencies>
@@ -33,6 +34,34 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <repositories>
+    <repository>
+      <id>ossrh</id>
+      <name>Central Repository (snapshots)</name>
+      <url>${dist.man.snapshotrepo.url}</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>ossrh</id>
+      <name>Central Repository (snapshots)</name>
+      <url>${dist.man.snapshotrepo.url}</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
 
   <build>
     <plugins>
